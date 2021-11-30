@@ -551,7 +551,7 @@ class Game extends React.Component {
 			host:false,
 			username:"",
 			role: null,
-			socket: io(website) //global socket
+			socket: io() //global socket
 		}; //get special id from server
 		this.changeParentVar = this.changeParentVar.bind(this);
 		this.readParentVar = this.readParentVar.bind(this);
