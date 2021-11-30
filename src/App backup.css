@@ -1,46 +1,13 @@
-.app {
-	width: 100%;
-	height: 100%;
-}
 .lobby {
 	text-align: center;
 	display:block;
 }
-.waiting {
-	display: grid;
-	grid-gap: 1%;
-	padding-left: 1.5%;
-	padding-right: 5%;
-	grid-template-rows: 12.5% 70% 5% 10% 2.5%;
-	grid-template-columns: 0.5fr 0.45fr;
-	height: 100%;
-	width: 100%;
-	grid-template-areas:
-	"roomname roomname"
-	"playerlist chat"
-	". ."
-	"usernamecontainer options"
-	". .";
-}
-.ingame {
-	display: grid;
-	gap: 1%;
-	grid-template-rows: 85% 5% 5% 15%;
-	grid-template-columns: 1fr 1fr 1fr;
-	padding: 1.5%;
-	grid-template-areas: 
-	"playerlist gamescreen chat"
-	"playerlist gamescreen chat"
-	"playerlist gamescreen chat"
-	"usernamecontainer  options options";
-}
-.game {
-	padding: 25%;
-	text-align: center;
-	grid-area: gamescreen;
-}
 .gamescreen {
+	margin: 2.5%;
+	float: left;
 	border: black solid 2.5px;
+	width: 25%;
+	height: 25em;
 }
 .select {
 	margin-left:25%;
@@ -74,24 +41,31 @@
 	padding: 1.25%;	
 	border: 3px solid #480355;
 	border-radius: 5px;
+	margin-left: 1.5%;
 	background-color:#9448BC;
 	color: #fffbffff;
 	font-weight: bold;
 	cursor: pointer;
 	transition: all .5s ease;
-	word-wrap: break-word;
 }
 .button:hover {
 	background-color: #480355;
-	min-width: 0;
-}
 
+}
+.playerlistcontainer {
+	display: block;
+	float:left;
+	margin-left: 2.5%;
+	width: 25%;
+}
 .playerlist {
+	display: block;
+ 	float: left;
 	border: 2.5px solid black;
+	width: 100%;
+	height: 25em;
 	text-align:center;
 	overflow: auto;
-	height: 25em;
-	grid-area: playerlist;
 }
 .playerlistname {
 	justify-content: center;
@@ -118,118 +92,64 @@
 	border: 1.5px solid #F3F8F2;
 	color: #EBE9E9;
 	border-radius: 5px;
-	padding: 0.5%;
+	padding: .5%;
 	margin: 2.5% 5% 2.5% 5%;
-	word-wrap: break-word;
 }
 .chatcontainer {
 	display: block;
 	border: 5px solid black;
 	border-radius: 5px;
-	overflow:hidden;
-	grid-area: chat;
-	height: 365px; /* fix this later overflow not working on percentage*/
-	resize: none;
-	padding: 2.5%;
+	float: left;
+	width: 65%;
+	height: 30em;
+	margin-left: 2.5%;
+	overflow: hidden;
 }
 .chatuserbox {
 	background-color: #4CB963;
 	border: 2.5px solid black;
 	border-radius: 5px;
-	margin-left: 17.5%;
+	margin-left: 20%;
 	margin-right: 12.5%;
-	margin-top: 0.5%;
+	margin-bottom: 5%;
 	height: 5em;
-	width: 65%;
+	width: 50%;
 	padding: .5%;
 	display:inline-block;
 }
+
 .options {
-	border: 2.5px solid black;
-	background-color: #4CB963;
-	border-radius: 5px;
-	grid-area: options;
-	gap: 1%;
-	padding: 1.5%;
-}
-
-.usernamecontainer {
 	background-color: #4CB963;
 	border: 2.5px solid black;
 	border-radius: 5px;
-	grid-area: usernamecontainer;
-	padding: 1.5%
+	position: absolute;
+	bottom: 1px;
+	left: 1px;
+	width: 52.5%;
+	height: 12.5%;
+	margin-left: 2.5%;
+	margin-bottom: 2.5%;
 }
-
-.modal {
-	position: fixed;
-	left: 0;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	background-color: rgba(0,0,0,0.5);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.modal-content {
-	width: 500px;
-	background-color: #fff;
-	border-radius: 25px;
-}
-
-.modal-header, .modal-footer {
-	padding: 10px;
-}
-
-.modal-title {
-	margin: 0;
-}
-
-.modal-body {
-	padding: 10px;
-	border-top: 1px solid #eee;
-	border-bottom: 1px solid #eee;
-}
-
-.switchcontainer {
-	display:block;
-}
-.switch {
-	width: 15px;
-	height: 15px;
-}
-
-#optionsinput {
-	width: 100%;
-}
-
-#optionsitem {
-	margin-left: 0.5%;
-	margin-right: 0.5%;
-}
-
 #ownusername {
-	white-space: nowrap;
-	text-align: center;
-
+	margin-left: 2.5%;
+	text-align: left;
+	display: inline-block;
 }
 
 #startgamebutton {
-	grid-area: startgamebutton;
+	margin-top: 7.5%;
+	margin-left: 25%;
+	width: 50%;
 }
 #chatbutton {
-	width: 25%;
+	width: 20%;
 	height: 50%;
-	margin-left: 1.5%;
-	display: inline-block;
 }
-#chatinput {
+#chatwaitinginput {
 	margin-left: 2%;
 	margin-top: 1.5%;
 	height: 75%;
-	width: 65%;
+	width: 75%;
 }
 #gamechatcontainer {
 	width:40%;
@@ -246,7 +166,6 @@ margin-bottom: 1.5%;
 }
 #Username {
 margin: 0.25%;
-text-align:center;
 }
 div #info {
 	margin-top:15%;
@@ -260,11 +179,5 @@ font-size: 10px;
 #roomname {
 font-size:35px;
 text-align:center;
-grid-area: roomname;
-}
-#lobbybutton {
-	margin-left: 1.5%
-}
-#gameselectbutton {
-	margin-left: 1.5%;
+
 }
