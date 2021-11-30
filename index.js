@@ -176,7 +176,12 @@ io.on("connection", (socket) => {
 		}
 		playerlist = []
 		for (id of playeridlist) {
-			playerlist.push({username : users[id]["username"], id : id});
+			if (id === sessionID) 
+			{const username = `(Yourself) ${users[id]["username"]}`;
+		} else {
+				const username = users[id]["username"];
+			}
+			playerlist.push({username : username, id : id});
 		}
 		callback({players : playerlist});
 	});
